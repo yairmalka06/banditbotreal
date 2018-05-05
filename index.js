@@ -8,17 +8,13 @@ const fs = require("fs");
 
 const ms = require("ms");
 
-const TOKEN = "NDMwNDE2ODI5MDgxNTgzNjI3.DaP4bQ.meD0HDNq7aWnwwathfgwxlhveyU";
-
 const PREFIX = "!";
 
 const fortnite = require('fortnite');
 
 var bot = new Discord.Client();
 
-var apikey = "c23d1fe9-7aad-4fb6-ab50-0b59c5d3b84b";
-
-const ft = new fortnite(apikey);
+const ft = new fortnite(process.env.apikey);
 
 let xp = require("./xp.json");
 
