@@ -115,7 +115,7 @@ bot.on("message", function(message){
                       {
                         var er = console.error();
                         console.log(er);
-                        message.channel.sendMessage("אי אפשר למחוק הודעות שקיימות יותר מ14 יום").then(message => message.delete(5000));
+                      incidentschannel.sendMessage("יש בעיה עם מחיקת ההודעות הבעיה היא :"+ " "+console.error());
                       }
                       message.channel.bulkDelete(amount).then(() =>
                       {
