@@ -111,6 +111,12 @@ bot.on("message", function(message){
                       if(!message.member.hasPermissions("MANAGE_MESSAGES")) return message.reply("אין לך הרשאות לפקודה זאת");
                       if(!args[1]) return message.channel.sendMessage("אנא רשום כמה הודעות אתה רוצה למחוק !");
                       var amount = args[1];
+                       if(error)
+                      {
+                        var err = error;
+                        console.log(err);
+                        message.channel.sendMessage("אי אפשר למחוק הודעות שקיימות יותר מ14 יום").then(message => message.delete(5000));
+                      }
                       message.channel.bulkDelete(amount).then(() =>
                       {
                         message.channel.sendMessage("מחקתי"+" "+amount+" "+"הודעות").then(message => message.delete(5000));
