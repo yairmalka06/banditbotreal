@@ -114,6 +114,7 @@ bot.on("message", function(message){
                       if(console.error)
                       {
                         var er = console.error();
+                        let incidentschannel = message.guild.channels.find(`name`, "logs");
                         console.log(er);
                       incidentschannel.sendMessage("יש בעיה עם מחיקת ההודעות הבעיה היא :"+ " "+console.error());
                       }
