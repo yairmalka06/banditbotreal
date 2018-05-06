@@ -111,13 +111,7 @@ bot.on("message", function(message){
                       if(!message.member.hasPermissions("MANAGE_MESSAGES")) return message.reply("אין לך הרשאות לפקודה זאת");
                       if(!args[1]) return message.channel.sendMessage("אנא רשום כמה הודעות אתה רוצה למחוק !");
                       var amount = args[1];
-                      if(console.error)
-                      {
-                        var er = console.error();
-                        let incidentschannel = message.guild.channels.find(`name`, "logs");
-                        console.log(er);
-                      incidentschannel.sendMessage("יש בעיה עם מחיקת ההודעות הבעיה היא :"+ " "+console.error());
-                      }
+
                       message.channel.bulkDelete(amount).then(() =>
                       {
                         message.channel.sendMessage("מחקתי"+" "+amount+" "+"הודעות").then(message => message.delete(5000));
